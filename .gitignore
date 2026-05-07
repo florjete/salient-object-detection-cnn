@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local environments
+.env
+.venv/
+venv/
+
+# Data and generated artifacts
+data/
+outputs/*
+!outputs/.gitkeep
+reports/*
+!reports/.gitkeep
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
