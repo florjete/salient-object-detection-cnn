@@ -20,9 +20,7 @@ Improved test loss: `0.4917`.
 ```text
 salient-object-detection-cnn/
 ├── notebooks/
-│   ├── one_day_sod_pipeline.ipynb
-│   ├── demo_notebook.ipynb
-│   └── dataset_setup_experiment.ipynb
+│   └── demo_notebook.ipynb
 ├── src/
 │   ├── organize_dataset.py
 │   ├── data_loader.py
@@ -71,6 +69,10 @@ Google Colab users can store the dataset in Google Drive at:
 /content/drive/MyDrive/sod_data/MSRA10K/
 ```
 
+Project Drive folder:
+
+[sod_data Google Drive folder](https://drive.google.com/drive/folders/1f-fPQoQMt7RQ5i0HX3st4oR8P5otLv08?usp=drive_link)
+
 Google Drive project layout:
 
 ```text
@@ -80,7 +82,7 @@ MyDrive/
     │   ├── images/
     │   └── masks/
     ├── checkpoints/
-    │   └── one_day_sod_best_model.pth
+    │   └── best_model.pth
     └── outputs/
 ```
 
@@ -144,7 +146,7 @@ notebooks/demo_notebook.ipynb
 The demo notebook loads:
 
 ```text
-/content/drive/MyDrive/sod_data/checkpoints/one_day_sod_best_model.pth
+/content/drive/MyDrive/sod_data/checkpoints/best_model.pth
 ```
 
 and shows:
@@ -162,7 +164,7 @@ Use the fixed official threshold:
 ```bash
 python src/evaluate.py test \
   --data-root "/content/drive/MyDrive/sod_data/MSRA10K" \
-  --checkpoint "/content/drive/MyDrive/sod_data/checkpoints/one_day_sod_best_model.pth" \
+  --checkpoint "/content/drive/MyDrive/sod_data/checkpoints/best_model.pth" \
   --threshold 0.40 \
   --visualize
 ```
@@ -172,7 +174,7 @@ Or rerun validation threshold search before testing:
 ```bash
 python src/evaluate.py test \
   --data-root "/content/drive/MyDrive/sod_data/MSRA10K" \
-  --checkpoint "/content/drive/MyDrive/sod_data/checkpoints/one_day_sod_best_model.pth" \
+  --checkpoint "/content/drive/MyDrive/sod_data/checkpoints/best_model.pth" \
   --search-threshold \
   --visualize
 ```
@@ -182,7 +184,7 @@ python src/evaluate.py test \
 ```bash
 python src/evaluate.py infer \
   --image "/content/drive/MyDrive/sod_data/MSRA10K/images/101.jpg" \
-  --checkpoint "/content/drive/MyDrive/sod_data/checkpoints/one_day_sod_best_model.pth" \
+  --checkpoint "/content/drive/MyDrive/sod_data/checkpoints/best_model.pth" \
   --output "/content/drive/MyDrive/sod_data/outputs/101_overlay.png" \
   --threshold 0.40
 ```
