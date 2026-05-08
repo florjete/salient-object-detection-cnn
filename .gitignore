@@ -13,6 +13,8 @@ outputs/*
 !outputs/.gitkeep
 reports/*
 !reports/.gitkeep
+!reports/*.pdf
+!reports/*.pptx
 checkpoints/
 *.pth
 *.pt
